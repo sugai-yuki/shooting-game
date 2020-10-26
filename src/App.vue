@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="screen">
+    <div class="screen" ref="screen">
       <router-view />
     </div>
   </div>
@@ -116,8 +116,7 @@
 
   .screen{
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+    margin: 0 auto;
     background-color: black;
     width: 60%;
     height: 400px;

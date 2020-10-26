@@ -1,6 +1,6 @@
 <template>
-  <div class="game" @mousemove="position($event)">
-    <div class="player"  :style="{top:posY+'px',left:posX+'px'}"></div>
+  <div class="game" ref="game" @mousemove="position($event)">
+    <div class="player"  :style="{top:posY+'px',left:posX+'px'}" @mousemove.stop></div>
   </div>
 </template>
 
@@ -16,15 +16,14 @@ export default{
     position(e){
       this.posX = e.offsetX;
       this.posY = e.offsetY;
-    },
+    }
   }
-}
+};
 </script>
 
 <style scoped>
   .game{
     color: white;
-    border: solid 1px white;
     height: 100%;
     width: 100%;
   }
@@ -34,7 +33,6 @@ export default{
   }
 
   .player{
-    content: "";
     width: 15px;
     height: 15px;
     background-color: white;
