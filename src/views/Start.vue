@@ -1,8 +1,18 @@
 <template>
   <div class="start">
-    <router-link :to="{name:'Game'}"><button class="start-btn">GAME START</button></router-link>
+    <button class="start-btn" @click="gameStart()">GAME START</button>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    gameStart(){
+      this.$router.push({name: "Game"});
+    }
+  }
+};
+</script>
 
 <style scoped>
   .start-btn{

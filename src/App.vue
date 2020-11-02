@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
-    <div class="screen" ref="screen">
-      <router-view />
-    </div>
+  <div class="app">
+     <div class="screen" ref="screen">
+        <router-view />
+        <div class="screen_left-cover"></div>
+        <div class="screen_under-cover"></div>
+        <div class="screen_right-cover"></div>
+     </div>
   </div>
 </template>
 
@@ -120,5 +123,32 @@
     background-color: black;
     width: 60%;
     height: 400px;
+  }
+
+  .screen_left-cover{
+      width: 33%;
+      height: 440px;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: -33%;
+
+  }
+
+  .screen_right-cover{
+      width: 33%;
+      height: 440px;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      right: -33%;
+  }
+
+  .screen_under-cover{
+      width: 100%;
+      height: 40px;
+      background-color: white;
+      position: absolute;
+      bottom: -40px;
   }
 </style>
