@@ -28,11 +28,6 @@ export default{
     myMove(e){
       this.myPosX = e.offsetX;
       this.myPosY = e.offsetY;
-      this.enemyBullets.forEach((enemyBullet) => {
-        if(Math.abs(enemyBullet.enemyBulletPosY - this.myPosY) <= 12.5 && Math.abs(enemyBullet.enemyBulletPosX - this.myPosX) <= 20){
-          this.$router.push({name: "Result"});
-        }
-      });
     },
     newMyBullet(){
       const newMyBulletData = {
