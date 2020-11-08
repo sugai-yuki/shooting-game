@@ -18,9 +18,10 @@ export default{
       enemies: [],
       enemiesBullets: [],
       score: 0,
-      clearCount: 0, 
+      levelCount: 0, 
       handleBulletsSet: null,
       newEnemyTypeAXSet: null,
+      changeEnemyTypeAXtoBSet: null,
       newEnemyTypeAYSet: null,
       newEnemyTypeBSet: null,
       newEnemyTypeCSet: null,
@@ -106,13 +107,18 @@ export default{
       this.getEnemiesBulletsNewPos();
     },
     newEnemyTypeAX(){
-      if(this.clearCount == 0 && this.score >= 3000){
-          clearInterval(this.newEnemyTypeAXSet);
-          this.clearCount += 1;
+      if(this.levelCount == 0 && this.score >= 3000){
+          this.changeEnemyTypeAXtoB();
           return 0;
         }
       this.newEnemyTypeAXR();
       this.newEnemyTypeAXL();
+    },
+    changeEnemyTypeAXtoB(){
+      clearInterval(this.newEnemyTypeAXSet);
+      setTimeout(this.newEnemyTypeB, 0)
+      this.changeEnemyTypeAXtoBSet = setInterval(this.newEnemyTypeB, 5000);
+      this.levelCount += 1;
     },
     newEnemyTypeAY(){
       if(this.score >= 500){
@@ -170,10 +176,6 @@ export default{
     },
     newEnemyTypeB(){
       if(this.score >= 1000){
-        this.newEnemyTypeBXR();
-        this.newEnemyTypeBXL();
-      }
-      if(this.sccre >= 3000){
         this.newEnemyTypeBXR();
         this.newEnemyTypeBXL();
       }
@@ -399,6 +401,7 @@ export default{
   destroyed() {
     clearInterval(this.handleBulletsSet);
     clearInterval(this.newEnemyTypeAXSet);
+    clearInterval(this.changeEnemyTypeAXtoBSet);
     clearInterval(this.newEnemyTypeAYSet);
     clearInterval(this.newEnemyTypeBSet);
     clearInterval(this.newEnemyTypeCSet);
