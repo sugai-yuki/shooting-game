@@ -393,8 +393,8 @@ export default{
     setTimeout(this.newEnemyTypeAX, 500);
     this.newEnemyTypeAXSet = setInterval(this.newEnemyTypeAX, 5000);
     this.newEnemyTypeAYSet = setInterval(this.newEnemyTypeAY, 5000);
-    this.newEnemyTypeBSet = setInterval(this.newEnemyTypeB, 6000);
-    this.newEnemyTypeCSet = setInterval(this.newEnemyTypeC, 8000);
+    this.newEnemyTypeBSet = setInterval(this.newEnemyTypeB, 8000);
+    this.newEnemyTypeCSet = setInterval(this.newEnemyTypeC, 10000);
     this.handleEnemiesSet = setInterval(this.handleEnemies, 34);
     this.newEnemiesBulletSet = setInterval(this.newEnemiesBullet, 700);
   },
