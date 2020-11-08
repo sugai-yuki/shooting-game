@@ -175,7 +175,7 @@ export default{
       this.enemies.push(newEnemyTypeAYD);
     },
     newEnemyTypeB(){
-      if(this.score >= 1000){
+      if(this.score >= 100){
         this.newEnemyTypeBXR();
         this.newEnemyTypeBXL();
       }
